@@ -1,0 +1,8 @@
+.main{
+    grid-area: header;
+    background-color: red;
+}
+
+.item{
+    color:blueviolet;
+}

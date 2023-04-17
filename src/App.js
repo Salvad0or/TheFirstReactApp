@@ -1,34 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import MyPosts from './Сomponents/Profile/MyPosts';
+import Header from './Сomponents/Header/Header';
+import Nav from './Сomponents/Navigation/Nav';
+import Dialog from './Сomponents/Dialogs/Dialog'
+import {Routes, Route} from "react-router-dom" 
+
+
 
 const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and saveffsf to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
 
-      <div className="test">
-      afsasf
-      </div>
+    <div className='app-wrapper'>
+
+      <Header />
+      <Nav />
+      <MyPosts/>
+      
+      <Routes>
+        <Route path='/messages' element={<Dialog/>}/>
+        <Route path='/profile' element={<MyPosts />}/>
+      </Routes>
+
 
     </div>
 
-   
-    
-    
+
   );
 }
+
 
 export default App;
