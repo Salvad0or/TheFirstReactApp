@@ -4,7 +4,7 @@ import Header from './Сomponents/Header/Header';
 import Nav from './Сomponents/Navigation/Nav';
 import Dialog from './Сomponents/Dialogs/Dialog'
 import {Routes, Route} from "react-router-dom" 
-
+import NotFound from "./Сomponents/NotFoundPage/NotFound"
 
 
 const App = () => {
@@ -14,11 +14,14 @@ const App = () => {
 
       <Header />
       <Nav />
-      <MyPosts/>
+      
       
       <Routes>
-        <Route path='/messages' element={<Dialog/>}/>
+        
         <Route path='/profile' element={<MyPosts />}/>
+        <Route path='/messages' element={<Dialog/>}/>
+        <Route path ="*" element={<NotFound/>}/>
+
       </Routes>
 
 

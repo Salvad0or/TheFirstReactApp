@@ -1,3 +1,18 @@
-.main {
-    color: red;
+.container {
+   
+    display: grid;
+    grid-template-columns: 25% 75%;
+
 }
+
+.leftSide{
+    
+    
+    
+}
+
+.rightSide{
+   
+   margin-left:5px;
+}
+    
