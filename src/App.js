@@ -19,7 +19,7 @@ const App = () => {
       <Routes>
         
         <Route path='/profile' element={<MyPosts />}/>
-        <Route path='/messages' element={<Dialog/>}/>
+        <Route path='/messages/*' element={<Dialog/>}/>
         <Route path ="*" element={<NotFound/>}/>
 
       </Routes>
