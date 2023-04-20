@@ -9,6 +9,14 @@ let state = {
         { id: 1, message: 'Hi' },
         { id: 2, message: 'Hi2' },
         { id: 3, message: 'Hi3' },
+    ],
+
+    friends: [
+        
+        {id: 1, name : 'Alex'},
+        {id: 2, name : 'Boild'},
+        {id: 3, name : 'Indio'},
+        
     ]
 }
 
