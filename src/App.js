@@ -19,7 +19,7 @@ const App = (props) => {
       <Routes>
 
         <Route path='/profile' element={<MyPosts name='Alexxxxxx' />} />
-        <Route path='/messages/*' element={<Dialog users={props.users} msg={props.msg} />} />
+        <Route path='/messages/*' element={<Dialog users={props.state.users} msg={props.state.msg} />} />
         <Route path="*" element={<NotFound />} />
 
       </Routes>
