@@ -1,10 +1,10 @@
 import Post from './Posts/Post'
 
-const MyPosts = () => {
+const MyPosts = (props) => {
     return (
         <div>
             
-           <Post name="Alex"/>
+           <Post name= {props.name}/>
            <Post/>
 
             
