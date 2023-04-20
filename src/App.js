@@ -13,7 +13,7 @@ const App = (props) => {
     <div className='app-wrapper'>
 
       <Header />
-      <Nav />
+      <Nav state = {props.state} />
 
 
       <Routes>

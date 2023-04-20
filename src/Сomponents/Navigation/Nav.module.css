@@ -9,4 +9,14 @@
 .active_link{
   color:chartreuse;
 }
+
+.friends{
+  background-color: aqua;
   
+}
+
+.friends_row{
+  display: flex;
+  align-items: center;
+
+}
