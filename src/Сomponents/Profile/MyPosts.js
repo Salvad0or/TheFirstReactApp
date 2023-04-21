@@ -3,11 +3,8 @@ import React from 'react';
 
 const MyPosts = (props) => {
 
-    let ref = React.createRef();
 
-    let aler = () => {
-        alert(ref.current.value);
-    }
+    let vl = React.createRef;
     
     return (
         <div>
@@ -15,9 +12,10 @@ const MyPosts = (props) => {
             <Post name={props.name} />
             <form>
                 <div>
-                <textarea ref={ref}></textarea>
+                <textarea ref={vl}></textarea>
                 </div>
-                <button onClick={aler}>Жмать</button>
+                <button onClick={props.functions("vl.apply.value")}>Жмать</button>
+                {console.log(vl.apply.value)}
             </form>
         </div>
 

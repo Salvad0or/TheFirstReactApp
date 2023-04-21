@@ -20,4 +20,12 @@ let state = {
     ]
 }
 
+export const addMessage = (newMessage) => {
+    let Message = {
+        id: state.msg.length, message: newMessage
+    }
+
+    state.msg.push(Message);
+}
+
 export default state;
