@@ -1,0 +1,14 @@
+.container{
+    
+    display: flex;
+    margin-top: 5px;
+    align-items: center;
+    vertical-align: center;
+    justify-content: center;
+
+}
+
+.friend_element{
+    padding: 15px;
+    border: 1px solid gray;
+}

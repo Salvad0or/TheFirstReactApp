@@ -13,9 +13,9 @@ let state = {
 
     friends: [
         
-        {id: 1, name : 'Alex'},
-        {id: 2, name : 'Boild'},
-        {id: 3, name : 'Indio'},
+        {id: 1, name : 'Alex',  url : 'https://i.ya-wd.com/images/male-avatar-icon-png.png'},
+        {id: 2, name : 'Boild', url : 'https://i.ya-wd.com/images/male-avatar-icon-png.png'},
+        {id: 3, name : 'Indio', url : 'https://i.ya-wd.com/images/male-avatar-icon-png.png'},
         
     ]
 }
