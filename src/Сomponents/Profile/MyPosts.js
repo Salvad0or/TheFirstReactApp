@@ -1,22 +1,36 @@
 import Post from './Posts/Post'
 import React from 'react';
+import Message from '../Dialogs/Message'
 
 const MyPosts = (props) => {
 
 
-    let vl = React.createRef;
-    
+    let link = React.createRef();
+    let messagesData = props.messsage.map(m => <Message message={m.message} />);
+
+    let addText = () => {
+        let text = link.current.value;
+        props.function(text)
+    }
+
+
     return (
         <div>
             
             <Post name={props.name} />
-            <form>
-                <div>
-                <textarea ref={vl}></textarea>
-                </div>
-                <button onClick={props.functions("vl.apply.value")}>Жмать</button>
-                {console.log(vl.apply.value)}
-            </form>
+            <div>
+             {messagesData}
+            </div>
+
+             <div>
+                <textarea ref={link}></textarea>
+            </div>
+
+            <div>
+                <button onClick={addText}>Жмать</button>
+            </div>
+            
+            
         </div>
 
 

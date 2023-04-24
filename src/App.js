@@ -16,7 +16,7 @@ const App = (props) => {
         <img className='Ocean_img' src='https://pic.rutubelist.ru/video/5e/c0/5ec0227c893e62de2f6ef75b03331f26.jpg' />
         <div className='Routes'>
           <Routes>
-            <Route path='/profile' element={<MyPosts name='Alexxxxxx' functions = {props.functions}/>} />
+            <Route path='/profile' element={<MyPosts name='Alexxxxxx' function = {props.functions} messsage = {props.state.msg}/>} />
             <Route path='/messages/*' element={<Dialog users={props.state.users} msg={props.state.msg} />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
