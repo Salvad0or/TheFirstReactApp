@@ -1,3 +1,7 @@
+let rerenderEntireTree = () =>{
+    
+}
+
 let state = {
     users: [
         { id: 1, name: 'Alex' },
@@ -26,6 +30,12 @@ export const addMessage = (newMessage) => {
     }
 
     state.msg.push(Message);
+
+    rerenderEntireTree(state );
+}
+
+export const subscribe = (observer) => {
+    rerenderEntireTree = observer;
 }
 
 export default state;
