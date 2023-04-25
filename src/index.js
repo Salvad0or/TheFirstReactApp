@@ -3,28 +3,26 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import state from './Сomponents/Redux/State'
-import {BrowserRouter, Routes, Route} from "react-router-dom" 
-import {addMessage} from './Сomponents/Redux/State'
-import {subscribe} from './Сomponents/Redux/State'
+import { BrowserRouter } from "react-router-dom"
+import store from './Сomponents/Redux/State'
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 let rerenderEntireTree = (state) => {
+  debugger;
   root.render(
     <BrowserRouter>
       <React.StrictMode>
-        <App state={state} functions = {addMessage}/>
+        <App state={state} dispatch={store.dispatch.bind(store)} />
       </React.StrictMode>
     </BrowserRouter>
 
   );
-   
+
 }
 
-
-
-rerenderEntireTree(state);
-subscribe(rerenderEntireTree); 
+rerenderEntireTree(store.getState());
+store.subscribe(rerenderEntireTree);
 
 reportWebVitals();
