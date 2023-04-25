@@ -8,6 +8,7 @@ import NotFound from "./Сomponents/NotFoundPage/NotFound"
 
 
 const App = (props) => {
+  
   return (
     <div className='app-wrapper'>
       <Header />
@@ -16,7 +17,7 @@ const App = (props) => {
         <img className='Ocean_img' src='https://pic.rutubelist.ru/video/5e/c0/5ec0227c893e62de2f6ef75b03331f26.jpg' />
         <div className='Routes'>
           <Routes>
-            <Route path='/profile' element={<MyPosts name='Alexxxxxx' function = {props.functions} messsage = {props.state.msg}/>} />
+            <Route path='/profile' element={<MyPosts name='Alexxxxxx' dispatch = {props.dispatch} message = {props.state.msg}/>} />
             <Route path='/messages/*' element={<Dialog users={props.state.users} msg={props.state.msg} />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

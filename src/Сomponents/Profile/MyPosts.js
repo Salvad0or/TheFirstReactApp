@@ -4,13 +4,18 @@ import Message from '../Dialogs/Message'
 
 const MyPosts = (props) => {
 
-
+    
     let link = React.createRef();
-    let messagesData = props.messsage.map(m => <Message message={m.message} />);
+    let messagesData = props.message.map(m => <Message message={m.message} />);
 
     let addText = () => {
-        let text = link.current.value;
-        props.function(text)
+        
+        let newMessage = {
+             text : link.current.value,
+             type : 'ADD-MESSAGE'
+        }
+
+        props.dispatch(newMessage)
     }
 
 

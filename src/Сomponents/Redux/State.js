@@ -1,41 +1,56 @@
-let rerenderEntireTree = () =>{
-    
-}
 
-let state = {
-    users: [
-        { id: 1, name: 'Alex' },
-        { id: 2, name: 'Bolduin' },
-        { id: 3, name: 'Gorbuin' },
-    ],
 
-    msg: [
-        { id: 1, message: 'Hi' },
-        { id: 2, message: 'Hi2' },
-        { id: 3, message: 'Hi3' },
-    ],
+let store = {
+    _state: {
+        users: [
+            { id: 1, name: 'Alex' },
+            { id: 2, name: 'Bolduin' },
+            { id: 3, name: 'Gorbuin' },
+        ],
 
-    friends: [
+        msg: [
+            { id: 1, message: 'Hi' },
+            { id: 2, message: 'Hi2' },
+            { id: 3, message: 'Hi3' },
+        ],
+
+        friends: [
+
+            { id: 1, name: 'Alex', url: 'https://i.ya-wd.com/images/male-avatar-icon-png.png' },
+            { id: 2, name: 'Boild', url: 'https://i.ya-wd.com/images/male-avatar-icon-png.png' },
+            { id: 3, name: 'Indio', url: 'https://i.ya-wd.com/images/male-avatar-icon-png.png' },
+
+        ]
+    },
+
+    getState() {
+        return this._state;
+    },
+
+    _callSubscriber () {
+
+    },
+
+    dispatch(action) {
+        switch (action.type) {
+            case 'ADD-MESSAGE':
+                let Message = { id: this._state.msg.length, message: action.text }
+
+                this._state.msg.push(Message)
+
+                this._callSubscriber(this._state);
+                break;
+            
         
-        {id: 1, name : 'Alex',  url : 'https://i.ya-wd.com/images/male-avatar-icon-png.png'},
-        {id: 2, name : 'Boild', url : 'https://i.ya-wd.com/images/male-avatar-icon-png.png'},
-        {id: 3, name : 'Indio', url : 'https://i.ya-wd.com/images/male-avatar-icon-png.png'},
-        
-    ]
-}
+            default:
+                break;
+        }
+    },
 
-export const addMessage = (newMessage) => {
-    let Message = {
-        id: state.msg.length, message: newMessage
+    subscribe(observer) {
+        this._callSubscriber = observer;
     }
 
-    state.msg.push(Message);
-
-    rerenderEntireTree(state );
 }
 
-export const subscribe = (observer) => {
-    rerenderEntireTree = observer;
-}
-
-export default state;
+export default store;
