@@ -1,4 +1,7 @@
 
+const addMessageType = {type :'ADD-MESSAGE' }
+const ADD_MESSAGE = (message) => ({type: addMessageType, message : message})
+
 
 let store = {
     _state: {
@@ -33,8 +36,8 @@ let store = {
 
     dispatch(action) {
         switch (action.type) {
-            case 'ADD-MESSAGE':
-                let Message = { id: this._state.msg.length, message: action.text }
+            case addMessageType:
+                let Message = { id: this._state.msg.length, message: action.message }
 
                 this._state.msg.push(Message)
 
@@ -53,4 +56,5 @@ let store = {
 
 }
 
-export default store;
+export {store,ADD_MESSAGE};
+

@@ -4,13 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom"
-import store from './Сomponents/Redux/State'
+import {store} from './Сomponents/Redux/State'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 let rerenderEntireTree = (state) => {
-  debugger;
+  
   root.render(
     <BrowserRouter>
       <React.StrictMode>
