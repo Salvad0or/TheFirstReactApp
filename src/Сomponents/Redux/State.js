@@ -1,7 +1,6 @@
-
-const addMessageType = {type :'ADD-MESSAGE' }
-const ADD_MESSAGE = (message) => ({type: addMessageType, message : message})
-
+const addMessageType = { type: 'ADD-MESSAGE' }
+const UPDATE_NEW_MESSAGE_BODY = { type: 'NEW-MESSAGE' }
+const SEND_MESSAGE_TYPE = { type: 'SEND-MESSAGE' }
 
 let store = {
     _state: {
@@ -23,14 +22,17 @@ let store = {
             { id: 2, name: 'Boild', url: 'https://i.ya-wd.com/images/male-avatar-icon-png.png' },
             { id: 3, name: 'Indio', url: 'https://i.ya-wd.com/images/male-avatar-icon-png.png' },
 
-        ]
+        ],
+
+        newMessageBody: '',
+
     },
 
     getState() {
         return this._state;
     },
 
-    _callSubscriber () {
+    _callSubscriber() {
 
     },
 
@@ -43,9 +45,23 @@ let store = {
 
                 this._callSubscriber(this._state);
                 break;
-            
-        
-            default:
+
+            case UPDATE_NEW_MESSAGE_BODY:
+                this._state.newMessageBody = action.message;
+                this._callSubscriber(this._state)
+                break;
+
+            case SEND_MESSAGE_TYPE:
+               
+                let body = this._state.newMessageBody;
+
+                this._state.newMessageBody = 'I have changed';
+
+                let id = this._state.msg.length;
+               
+                this._state.msg.push({ id: id, message: body });
+                this._callSubscriber(this._state);
+                
                 break;
         }
     },
@@ -56,5 +72,9 @@ let store = {
 
 }
 
-export {store,ADD_MESSAGE};
+const ADD_MESSAGE = (message) => ({ type: addMessageType, message: message })
+const sendMessageCreator = () => ({ type: SEND_MESSAGE_TYPE })
+const updateNewMessageBodyCreator = (message) =>({ type: UPDATE_NEW_MESSAGE_BODY, message : message })
+
+export { store, ADD_MESSAGE,sendMessageCreator, updateNewMessageBodyCreator};
 

@@ -1,7 +1,6 @@
 .container {
    
-    display: grid;
-    grid-template-columns: 25% 75%;
+    display: flex;
 
 }
 
@@ -9,6 +8,14 @@
     
     
     
+}
+
+.rightSide{
+    padding-left: 15px;
+}
+
+.bottom{
+    padding-top: 10px;
 }
 
 .rightSide{

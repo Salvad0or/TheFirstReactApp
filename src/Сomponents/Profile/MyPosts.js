@@ -14,7 +14,7 @@ const MyPosts = (props) => {
 
         let text = link.current.value;
         let action = ADD_MESSAGE(text)
-        props.dispatch(action)
+        props.state.dispatch(action)
     }
 
 

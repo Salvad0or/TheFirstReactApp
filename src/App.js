@@ -18,7 +18,7 @@ const App = (props) => {
         <div className='Routes'>
           <Routes>
             <Route path='/profile' element={<MyPosts name='Alexxxxxx' dispatch = {props.dispatch} message = {props.state.msg}/>} />
-            <Route path='/messages/*' element={<Dialog users={props.state.users} msg={props.state.msg} />} />
+            <Route path='/messages/*' element={<Dialog state = {props.state} dispatch = {props.dispatch}/>} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
